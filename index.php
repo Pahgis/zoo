@@ -9,7 +9,20 @@
 </head>
 <body>
   
-
+<div class="container" style="height: 100%;">
+    <div class="hauteur"></div>
+    <div class="row text-center">
+        <div class="col-4"></div>
+        <div class="col-3">
+            <form action="./process/login/login.php" method="post">
+                <input type="text" class="form-control " name="name" id="">
+                <div>
+                    <button class="btn btn-primary mt-5" type="submit">Se connecter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 
 
