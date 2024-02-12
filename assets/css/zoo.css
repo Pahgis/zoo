@@ -1,0 +1,18 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html , body {
+    height: 100vh
+}
+.barSide{
+   position: absolute;
+    width: 70px !important;
+    background-color: #F9C67B !important;
+}
+
+.test{
+    background-color: red !important;
+    height: 100px !important;
+    width: 100px !important;
+}
