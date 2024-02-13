@@ -4,21 +4,46 @@
 }
 html , body {
     height: 100vh;
+   
+}
+.encloszone1{
+    height: 400px;
+    transform: translate(150px, 80px) !important;
+    transform: scale(0.6);
     margin: 0;
- 
-    
-    
-  
-    
+    opacity: 0;
+}
+.encloszone2{
+    height: 340px;
+    transform: translate(640px,180px);
+    margin: 0;
+    z-index: -1;
+    opacity: 0;
+}
+.encloszone3{
+    height: 300px;
+    transform: translate(-100px,500px);
+    margin: 0;
+    z-index: -1;
+    opacity: 0;
+}
+.encloszone4{
+    height: 170px;
+    transform: translate(-20px,550px);
+    margin: 0;
+    z-index: -1;
+    opacity: 0;
 }
 .module{
     background-image: url('/assets/bg/ZOO.png') !important;
-   
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
-background-position: center;
-
-  height: 100%;
+    background-position: center;
+    background-attachment: fixed;
+     height: 100%;
+     overflow: hidden;
+     z-index: 2;
+     position: relative;
 }
 .barSide{
    position: absolute;
@@ -30,4 +55,10 @@ background-position: center;
     background-color: red !important;
     height: 100px !important;
     width: 100px !important;
+}
+
+.book{
+    position: absolute;
+    height: auto;
+    z-index: 5;
 }
