@@ -11,6 +11,8 @@
 </head>
 
 <body>
+    <div class="module" id="module"></div>
+    <!--
     <div class="" style="height: 100%;">
         <div class="row">
             <div class="col-9">
@@ -20,8 +22,8 @@
                 <div class="d-flex flex-row-reverse " style="height: 100%;">
                 <div class=" barSide d-flex flex-column" style="height: 100%;">
                     <i class="fa-solid fa-paw fa-2x pt-4 draggable" id="drag-1"></i>
-                    <i class="fa-regular fa-address-card fa-2x pt-4"></i>
-                    <i class="fa-solid fa-chart-pie fa-2x pt-4"></i>
+                    <i class="fa-regular fa-address-card fa-2x pt-4 draggable"></i>
+                    <i class="fa-solid fa-chart-pie fa-2x pt-4 draggable"></i>
                 </div>
             </div>
             </div>
@@ -29,7 +31,7 @@
         </div>
 
     </div>
-
+-->
 
 
 
