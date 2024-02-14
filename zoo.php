@@ -11,30 +11,64 @@
 </head>
 
 <body>
+<div class="timer position-absolute top-0 start-50 text-black">Time</div>
+<div class="tableauResltat position-absolute top-50 start-50">
+    <div class="row">
+        <div class="col-12">
+            <h2>Résultat du jour : </h2>
+            <div>Entretien  - </div>
+            <div>Soin des animaux</div>
+            <div>Achats d'animaux</div>
+            <div>Clients </div>
+        </div>
+    </div>
+</div>
+    <div class="buttonMenu position-absolute top-0 end-0">
+        <button class="btn btn-primary">Menu</button>
+    </div>
 
-    
-<!-- IMAGE CACHER POUR ZONE ENCLO -->
-    
+
+    <div id="menuTest" class=" row draggable menuTest">
+        <div class="row">
+            <div class="col-10 ">
+                    <div class="animaux">
+                        <div class="lapin">
+                            <img src="/assets/animal_img/lapin.png" alt="" style="height: 30px;" class="draggable">
+                        </div>
+                    </div>
+                    <div class="employer"></div>
+                    <div class="revenu"></div>
+            </div>
+            <div class="col-2 bgTransparent">
+                <button class="buttonAnimal btn"></button>
+                <button class="buttonEmployer btn"></button>
+                <button class="buttonData btn"></button>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <div class="module " id="module">
         <div class="row" style="height: 100%;">
             <div class="col-6">
-                <img class="encloszone1" src="./assets/bg/hautgauche.png" >
-                <img class="encloszone3" src="./assets/bg/basgauche.png" >
+                <img class="encloszone1" src="./assets/bg/hautgauche.png">
+                <img class="encloszone3" src="./assets/bg/basgauche.png">
             </div>
             <div class="col-6">
-            <img class="encloszone2" src="./assets/bg/hautdroite.png" >
-            <img class="encloszone4" src="./assets/bg/basdroite.png" >
+                <img class="encloszone2" src="./assets/bg/hautdroite.png">
+                <img class="encloszone4" src="./assets/bg/basdroite.png">
+            </div>
         </div>
-        </div>
-       
+
     </div>
     </div>
+  
 
 
-
-
-
-
+<script src="./assets/js/jourTIme.js"></script>
+    <script src="./assets/js/menu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
     <script src="./assets/js/drag.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
