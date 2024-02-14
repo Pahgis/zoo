@@ -6,6 +6,10 @@ html , body {
     height: 100vh;
    
 }
+.timer{
+    z-index: 99 !important;
+    color: black;
+}
 .encloszone1{
     height: 400px;
     transform: translate(150px, 80px) !important;
@@ -32,8 +36,8 @@ html , body {
     transform: translate(-20px,550px);
     margin: 0;
     z-index: -1;
-    opacity: 0;
-}
+    opacity:0;
+} 
 .module{
     background-image: url('/assets/bg/ZOO.png') !important;
     background-size: 100%;
@@ -45,20 +49,59 @@ html , body {
      z-index: 2;
      position: relative;
 }
-.barSide{
-   position: absolute;
-    width: 70px !important;
-    background-color: #F9C67B !important;
+
+.buttonMenu{
+  
+    z-index: 10;
+    
 }
 
-.test{
-    background-color: red !important;
-    height: 100px !important;
-    width: 100px !important;
-}
-
-.book{
+#menuTest{
     position: absolute;
-    height: auto;
-    z-index: 5;
+    width: 300px;
+    height: 600px;
+    display: none;
+    z-index: 30;
+    background-color: rgb(209, 160, 91) !important;
+    
+}
+
+.buttonAnimal{
+position:absolute;
+z-index: 50;
+width: 50px;
+height: 50px;
+background-image: url('/assets/icon/vecteezy_cute-pixel-8-bit-cat-isolated-on-blue-background_15435020.jpg');
+background-size: cover;
+}
+.buttonEmployer{
+    position:absolute;
+    z-index: 23;
+    width: 50px;
+    height: 50px;
+    transform: translateY(60px);
+    background-image: url('/assets/icon/waiter_9533914\ copy.png');
+    background-size: cover;
+}
+.buttonData{
+    position:absolute;
+    z-index: 23;
+    width: 50px;
+    height: 50px;
+    transform: translateY(120px);
+    background-image: url('/assets/icon/vecteezy_money-bag-pixel-art-business-icon_6470695.jpg');
+    background-size: cover;
+}
+
+.bgTransparent{
+    opacity: 1;
+    background-color: rgba(255, 228, 196, 0);
+    transform: translateX(50px);
+}
+.tableauResultat{
+   z-index: 99;
+    width: 400px;
+    height: 600px;
+    background-color: rgb(8, 8, 8) !important;
+    color: black !important;
 }
