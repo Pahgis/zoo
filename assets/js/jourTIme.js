@@ -1,27 +1,53 @@
+import { animals } from "/assets/js/drag.js";
+
 let timer = document.querySelector(".timer")
-let tableauResultat = document.querySelector(".tableauResltat")
+let tableauResultat = document.querySelector(".tableauResultat")
+let buttonJourSuivant = document.querySelector(".joursuivant")
 let trigger = false;
+let enclosEntretien = document.querySelector(".enclosEntretien")
+let animalEntretien = document.querySelector(".animalEntretien")
+let animalBuy = document.querySelector(".animalBuy")
+let clientBenef = document.querySelector(".client")
+let revenus = document.querySelector("#revenu")
+
 let  i = 0;
-/*
-const jour = setInterval(() => {
-    console.log("ok")
-    i++;
-    if(i === 5){
-       resultat()
-        console.log("fin de journée")
-        i = 0
-        clearInterval(jour)
-    }
-}, 1000);
+
+let total = 0 
+
+
+// FUNCTION ENVOI DATA JOURNÉE
 
 function resultat(){
-   let div  = document.createElement("div")
-   tableauResultat.append(div)
-   div.style.width = "400px"
-   div.style.height = "400px"
-   div.style.backgroundColor = "red"
-   div.style.zIndex = "99"
-   div.style.position = "absolute"
+    let  data = "ok"
+    fetch("./process/db_add.php" , {
+        method:"POST",
+        body: data
+    })
 }
 
-*/
+// JOUR SUIVANT
+
+buttonJourSuivant.addEventListener("click", function(e){
+    tableauResultat.style.display = "none ";
+    resultat()
+    //DureJour();
+
+})
+
+// FUNCTION TIMER DE LA JOURNEE
+
+function DureJour(){
+    i=0
+    setTimeout(() => {
+        console.log("fin de journée")
+        i++
+       console.log(i)
+       tableauResultat.style.display = "block ";
+       // total = (-enclosEntretien.value) - animalBuy.value + clientBenef.value - animalEntretien.value
+    }, 5000);
+}
+
+// LANCEMENT DE LA PREMIERE JOURNÉE
+
+//DureJour();
+
