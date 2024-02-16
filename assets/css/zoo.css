@@ -3,59 +3,24 @@
     padding: 0px;
 }
 html , body {
-    height: 100vh;
-   
+    height: 100%;
+    overflow: hidden;
 }
 .timer{
-    z-index: 99 !important;
+    z-index: 50 !important;
     color: black;
-}
-.encloszone1{
-    height: 400px;
-    transform: translate(150px, 80px) !important;
-    transform: scale(0.6);
-    margin: 0;
-    opacity: 0;
-}
-.encloszone2{
-    height: 340px;
-    transform: translate(640px,180px);
-    margin: 0;
-    z-index: -1;
-    opacity: 0;
-}
-.encloszone3{
-    height: 300px;
-    transform: translate(-100px,500px);
-    margin: 0;
-    z-index: -1;
-    opacity: 0;
-}
-.encloszone4{
-    height: 170px;
-    transform: translate(-20px,550px);
-    margin: 0;
-    z-index: -1;
-    opacity:0;
-} 
-.module{
-    background-image: url('/assets/bg/ZOO.png') !important;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-     height: 100%;
-     overflow: hidden;
-     z-index: 2;
-     position: relative;
 }
 
 .buttonMenu{
-  
-    z-index: 10;
-    
+    z-index: 10; 
 }
 
+
+.modal-backdrop {
+    z-index: -1;
+  }
+  
+  
 #menuTest{
     position: absolute;
     width: 300px;
@@ -68,7 +33,7 @@ html , body {
 
 .buttonAnimal{
 position:absolute;
-z-index: 50;
+z-index: 45;
 width: 50px;
 height: 50px;
 background-image: url('/assets/icon/vecteezy_cute-pixel-8-bit-cat-isolated-on-blue-background_15435020.jpg');
@@ -99,9 +64,22 @@ background-size: cover;
     transform: translateX(50px);
 }
 .tableauResultat{
-   z-index: 99;
+   z-index: 50;
     width: 400px;
     height: 600px;
-    background-color: rgb(8, 8, 8) !important;
-    color: black !important;
+    background-color: rgb(211, 207, 207) !important;
+    color: rgb(11, 10, 10) !important;
+    display: none ;
 }
+.employer{
+    display:none ;
+}
+.revenu{
+    display: none ;
+}
+.portrait{
+    height: 200px;
+    width: 100%;
+}
+
+
