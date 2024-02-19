@@ -81,5 +81,8 @@ background-size: cover;
     height: 200px;
     width: 100%;
 }
-
+.barGestion{
+    z-index: 99;
+    width: 100%;
+}
 

@@ -19,6 +19,24 @@ $zoo = $db->addZoo($_GET["id"], $_GET["zoo"]);
 </head>
 
 <body>
+    <header>
+        <nav class="navbar bg-body-tertiary position-fixed top-0 barGestion">
+            <div class="container-fluid">
+                <div class="row" style="width:100%;">
+                    <div class="col-4"></div>
+                        <!-- TIMER JOUR -->
+                    <div class="timer  text-black col-4 row">
+                        <div id="temps col-6" ></div>
+                        <div id="revenu" class="card bg-white col-6" data-revenu="<?= $zoo["revenu"] ?>" style="width:10%;"><?= $zoo["revenu"] ?></div> 
+                    </div> 
+                    <div class="buttonMenu col-4 d-flex flex-row-reverse">
+                            <button class="btn btn-primary ">Menu</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <div class="position-fixed fondbg" style="width: 100%;" id="#fond">
         <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2564 1418" width="2564" height="1418" class="fondimg">
             <title>ZOO</title>
@@ -7726,11 +7744,8 @@ $zoo = $db->addZoo($_GET["id"], $_GET["zoo"]);
         </svg>
     </div>
 
-    <!-- TIMER JOUR -->
-    <div class="timer position-fixed top-0 start-50 text-black d-flex flex-row">
-        <div id="temps"></div>
-        <div id="revenu" class="card bg-white" data-revenu="<?= $zoo["revenu"] ?>"><?= $zoo["revenu"] ?></div>
-    </div>
+    
+   
     <!-- FENETRE FIN DE JOURNÉE -->
     <div class="tableauResultat position-absolute top-50 start-50 ">
         <div class="row">
@@ -7746,16 +7761,11 @@ $zoo = $db->addZoo($_GET["id"], $_GET["zoo"]);
                 <div>Clients </div>
                 <input type="hidden" name="client" value="">
                 <button type="submit" class="joursuivant btn btn-primary">Jour suivant</button>
-
-
-
             </div>
         </div>
     </div>
     <!-- MENU ADD ANIMAL -->
-    <div class="buttonMenu position-fixed top-0 end-0">
-        <button class="btn btn-primary">Menu</button>
-    </div>
+    
 
 
     <div id="menuTest" class=" row draggable menuTest">
