@@ -1,7 +1,17 @@
 html, body{
 
     height: 100%;
+    background-image: url('/assets/bg/BG_Flou.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .hauteur{
     height: 40%;
+}
+.bg_form{
+    height: 968px;
+    width: 702px;
+    background-image: url('/assets/bg/Rolly_menu.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }

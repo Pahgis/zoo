@@ -1,10 +1,19 @@
-import { Lapin } from "/assets/js/Lapin.js";
+let posMouseX;
+let posMouseY;
 const position2 = { x: 0, y: 0 }
 let posX;
 let posY;
 let triggers = false
 let revenus = document.querySelector("#revenu")
 const fond = document.querySelector(".fondbg")
+let toadAll = document.querySelector(".toad")
+let enclos1=0;
+let enclos2=0;
+let enclos3=0;
+let enclos4=0;
+let posMouseXinit;
+let posMouseYinit;
+export let animalsMaxMoney = 0;
 export let animals = []
 export let totalAnimaux = 0;
 
@@ -18,14 +27,17 @@ interact('.draggable')
       end(event) {
         if (triggers) {
           event.target.style.transform = 'translate(' + 0 + 'px, ' + 0 + 'px)'
+          
           event.target.setAttribute('data-x', 0)
           event.target.setAttribute('data-y', 0)
           triggers = false
         }
+        
       }
     }
   })
 function dragMoveListener(event) {
+  
   var target = event.target
   var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
   var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
@@ -34,6 +46,7 @@ function dragMoveListener(event) {
 
   target.setAttribute('data-x', x)
   target.setAttribute('data-y', y)
+  
 }
 window.dragMoveListener = dragMoveListener
 
@@ -56,36 +69,66 @@ interact(document.body)
   })
 
 // enclos 4 add animals
+function createToad(x,y, animal){
+  setTimeout(() => {
+    switch (animal) {
+      case "toad":
+        animalsMaxMoney += 100;
+        break;
+        case "slime":
+        animalsMaxMoney += 200;
+        break;
+        case "bat":
+        animalsMaxMoney += 300;
+        break;
+        case "citrouille":
+        animalsMaxMoney += 400;
+        break;
+    
+     
+        
+    }
+    let svg = document.querySelector("svg")
+  //   let div = document.createElement("div")
+  // document.body.append(div)
+  // div.classList.add(animal)
+  // div.style.transform =
+  //     `translate(${parseInt(x)}px, ${parseInt(y)}px)`
+  // }, 1000);
+  let scrollX = parseInt(document.querySelector('.fondimg').getAttribute("pos-x"))
+  let scrollY = parseInt(document.querySelector('.fondimg').getAttribute("pos-y"))
+    svg.innerHTML += `<use   href="#${animal}1" x="${x - scrollX}" y="${y - scrollY}"></use>`;
+  }, 1000);
+}
 
 interact(".enclos4")
   .dropzone({
     ondrop: function (event) {
-      console.log(event.clientX)
-
-
+      
       // ICI FUNCTION CREATION ANIMAUX
-
+     
       if (event.relatedTarget.id === "menuTest") {
         triggers = false;
       } else {
 
         triggers = true
       }
-
-      if (event.target.classList.contains("enclos4")) {
-        let test = [4, event.target.id]
+      console.log(event.relatedTarget.classList)
+      if (event.target.classList.contains("enclos4") && event.relatedTarget.id != "menuTest" && enclos4 < 6 && event.relatedTarget.classList.contains("draggable")) {
+        console.log(enclos4)
+        enclos4++
+        let test = [4, event.relatedTarget.id, posMouseX,posMouseY]
+        createToad(test[2] , test[3] , event.relatedTarget.id)
         animals.push(test)
-        console.log(event.relatedTarget.dataset.cout)
-        revenus.dataset.revenu = revenus.dataset.revenu - event.relatedTarget.dataset.cout
-        revenus.innerHTML  =  revenus.dataset.revenu
-        totalAnimaux += event.relatedTarget.dataset.cout;
+        
       }
-      console.log(animals)
+      
     }
+    
   })
   .on('dropactivate', function (event) {
-
     event.target.classList.add('drop-activated')
+
   })
 
   // ENCLOS 1 ZONE
@@ -93,7 +136,7 @@ interact(".enclos4")
   interact(".enclos1")
   .dropzone({
     ondrop: function (event) {
-      console.log(event.clientX)
+      
 
 
       // ICI FUNCTION CREATION ANIMAUX
@@ -105,14 +148,14 @@ interact(".enclos4")
         triggers = true
       }
 
-      if (event.target.classList.contains("enclos1")) {
-        let test = [1, event.target.id]
+      if (event.target.classList.contains("enclos1") && event.relatedTarget.id != "menuTest" && enclos1<6 && event.relatedTarget.classList.contains("draggable")) {
+        enclos1++
+        let test = [1, event.relatedTarget.id, posMouseX,posMouseY]
+        createToad(test[2] , test[3] , event.relatedTarget.id)
         animals.push(test)
-        revenus.dataset.revenu = revenus.dataset.revenu - event.relatedTarget.dataset.cout
-        revenus.innerHTML  =  revenus.dataset.revenu
-        totalAnimaux += event.relatedTarget.dataset.cout;
+        
       }
-      console.log(animals)
+      
     }
   })
   .on('dropactivate', function (event) {
@@ -125,7 +168,7 @@ interact(".enclos4")
   interact(".enclos2")
   .dropzone({
     ondrop: function (event) {
-      console.log(event.clientX)
+      
 
 
       // ICI FUNCTION CREATION ANIMAUX
@@ -137,14 +180,14 @@ interact(".enclos4")
         triggers = true
       }
 
-      if (event.target.classList.contains("enclos2")) {
-        let test = [2, event.target.id]
+      if (event.target.classList.contains("enclos2") && event.relatedTarget.id != "menuTest" && enclos2 < 6 && event.relatedTarget.classList.contains("draggable")) {
+        enclos2++
+        let test = [2, event.relatedTarget.id, posMouseX,posMouseY]
+        createToad(test[2] , test[3] , event.relatedTarget.id)
         animals.push(test)
-        revenus.dataset.revenu = revenus.dataset.revenu - event.relatedTarget.dataset.cout
-        revenus.innerHTML  =  revenus.dataset.revenu
-        totalAnimaux += event.relatedTarget.dataset.cout;
+       
       }
-      console.log(animals)
+     
     }
   })
   .on('dropactivate', function (event) {
@@ -158,7 +201,7 @@ interact(".enclos4")
   interact(".enclos3")
   .dropzone({
     ondrop: function (event) {
-      console.log(event.clientX)
+      
 
 
       // ICI FUNCTION CREATION ANIMAUX
@@ -170,15 +213,14 @@ interact(".enclos4")
         triggers = true
       }
 
-      if (event.target.classList.contains("enclos3")) {
-        let test = [3, event.target.id]
-        revenus.dataset.revenu = revenus.dataset.revenu - event.relatedTarget.dataset.cout
-        revenus.innerHTML  =  revenus.dataset.revenu
-        totalAnimaux += event.relatedTarget.dataset.cout;
+      if (event.target.classList.contains("enclos3") && event.relatedTarget.id != "menuTest" && enclos3 < 6 && event.relatedTarget.classList.contains("draggable")) {
+        enclos++
+        let test = [3, event.relatedTarget.id, posMouseX,posMouseY]
+        createToad(test[2] , test[3] , event.relatedTarget.id)
         animals.push(test)
 
       }
-      console.log(animals)
+      
     }
   })
   .on('dropactivate', function (event) {
@@ -202,18 +244,29 @@ interact('.fondimg').draggable({
   ],
   listeners: {
     start (event) {
-      console.log(event.type, event.target)
+     
+      
+      
     },
     move (event) {
       position.x += event.dx
       position.y += event.dy
-      
+     
         event.target.style.transform =
         `translate(${position.x}px, ${position.y}px)`
-    
+        event.target.setAttribute('pos-x', position.x)
+        event.target.setAttribute('pos-y', position.y)
       },
      
   }
 })
+
+
+  window.addEventListener("mousemove", function(e){
+  
+    posMouseX = e.clientX
+    posMouseY = e.clientY
+    
+  })
 
 

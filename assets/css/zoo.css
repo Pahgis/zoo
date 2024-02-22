@@ -5,6 +5,11 @@
 html , body {
     height: 100%;
     overflow: hidden;
+    animation-name: soleil;
+    animation-duration: 120s;
+    animation-iteration-count: infinite;
+    
+
 }
 .timer{
     z-index: 50 !important;
@@ -23,11 +28,13 @@ html , body {
   
 #menuTest{
     position: absolute;
-    width: 300px;
+    width: 600px;
     height: 600px;
     display: none;
-    z-index: 30;
-    background-color: rgb(209, 160, 91) !important;
+    z-index: 60;
+    background-image: url('/assets/ui/Menu-principal.png');
+    background-size: cover;
+    background-position: center;
     
 }
 
@@ -36,16 +43,17 @@ position:absolute;
 z-index: 45;
 width: 50px;
 height: 50px;
-background-image: url('/assets/icon/vecteezy_cute-pixel-8-bit-cat-isolated-on-blue-background_15435020.jpg');
+background-image: url('/assets/ui/bouton_menu_animal_up.png');
 background-size: cover;
+transform: translateY(200px);
 }
 .buttonEmployer{
     position:absolute;
     z-index: 23;
     width: 50px;
     height: 50px;
-    transform: translateY(60px);
-    background-image: url('/assets/icon/waiter_9533914\ copy.png');
+    transform: translateY(260px);
+    background-image: url('/assets/ui/bouton_menu_emp_up.png');
     background-size: cover;
 }
 .buttonData{
@@ -53,15 +61,15 @@ background-size: cover;
     z-index: 23;
     width: 50px;
     height: 50px;
-    transform: translateY(120px);
-    background-image: url('/assets/icon/vecteezy_money-bag-pixel-art-business-icon_6470695.jpg');
+    transform: translateY(320px);
+    background-image: url('/assets/ui/bouton_menu_money-up.png');
     background-size: cover;
 }
 
 .bgTransparent{
     opacity: 1;
     background-color: rgba(255, 228, 196, 0);
-    transform: translateX(50px);
+    transform: translateX(-10px);
 }
 .tableauResultat{
    z-index: 50;
@@ -83,6 +91,298 @@ background-size: cover;
 }
 .barGestion{
     z-index: 99;
-    width: 100%;
+   background-image: url('/assets/ui/navbar.png');
+   background-size: contain;
+   background-position: center;
+   width: 550px;
+   height:100px;
+   background-repeat: no-repeat;
+}
+/* HIDE RADIO */
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* IMAGE STYLES */
+  [type=radio] + img {
+    cursor: pointer;
+  }
+  
+  /* CHECKED STYLES */
+  [type=radio]:checked + img {
+    outline: 2px solid #f00;
+  }
+  .test1{
+    height:48px ;
+    width: 48px;
+    background-image:  url('/assets/ui/test.png') ;
+    background-size: cover;
+    z-index: 99;
+    animation-name: sprite;
+    animation-duration: 120s;
+    animation-timing-function: steps(6);
+    animation-iteration-count: infinite;
+  }
+.toad{
+  height:48px ;
+  width: 48px;
+  background-image:  url('/assets/animal_img/ToxicFrogGreenBrown_Idle.png') ;
+  background-size: cover;
+  z-index: 50;
+  animation-name: toad;
+  animation-duration: 1s;
+  animation-timing-function: steps(8);
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+.slime{
+  height:100px ;
+  width: 100px;
+  background-image:  url('/assets/animal_img/spriteslime.png') ;
+  background-size: cover;
+  z-index: 50;
+  animation-name: slime;
+  animation-duration: 1s;
+  animation-timing-function: steps(8);
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+.bat{
+  height:50px;
+  width: 50px;
+  background-image:  url('/assets/animal_img/sprite_bat.png') ;
+  background-size: cover;
+  z-index: 50;
+  animation-name: bat;
+  animation-duration: 1s;
+  animation-timing-function: steps(4);
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+.citrouille{
+  height:80px ;
+  width: 80px;
+  background-image:  url('/assets/animal_img/sprites_cit.png') ;
+  background-size: cover;
+  z-index: 50;
+  animation-name: cit;
+  animation-duration: 2s;
+  animation-timing-function: steps(8);
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+.toadMenu{
+  height:120px ;
+  width: 120px;
+  background-image:  url('/assets/animal_img/frog_sprites_120.png') ;
+  background-size: cover;
+  z-index: 50;
+  animation-name: toad1;
+  animation-duration: 3s;
+  animation-timing-function: steps(16);
+  animation-iteration-count: infinite;
+  
+}
+.slimeMenu{
+  height:120px ;
+  width: 120px;
+  background-image:  url('/assets/animal_img/slime_sprites_120.png') ;
+  background-size: cover;
+  z-index: 50;
+  animation-name: slime1;
+  animation-duration: 2s;
+  animation-timing-function: steps(8);
+  animation-iteration-count: infinite;
+  
+}
+.batMenu{
+  height:120px ;
+  width: 120px;
+  background-image:  url('/assets/animal_img/bat_sprites_120.png') ;
+  background-size: cover;
+  z-index: 50;
+  animation-name: bat1;
+  animation-duration: 2s;
+  animation-timing-function: steps(4);
+  animation-iteration-count: infinite;
+  
+}
+.toadEnclos{
+  height:80px ;
+  width: 80px;
+  background-image:  url('/assets/animal_img/frog_sprites_80.png') ;
+  background-size: cover;
+  z-index: 50;
+  animation-name: toadEnclos;
+  animation-duration: 2s;
+  animation-timing-function: steps(16);
+  animation-iteration-count: infinite;
+  
+}
+.batEnclos{
+  height:80px ;
+  width: 80px;
+  background-image:  url('/assets/animal_img/bat_sprites_80.png') ;
+  background-size: cover;
+  z-index: 50;
+  animation-name: batEnclos;
+  animation-duration: 2s;
+  animation-timing-function: steps(4);
+  animation-iteration-count: infinite;
+  
+}
+.citrouilleEnclos{
+  height:80px ;
+  width: 80px;
+  background-image:  url('/assets/animal_img/cit_sprites_80.png') ;
+  background-size: cover;
+  z-index: 50;
+  animation-name: citrouilleEnclos;
+  animation-duration: 2s;
+  animation-timing-function: steps(8);
+  animation-iteration-count: infinite;
+  
+}
+.slimeEnclos{
+  height:80px ;
+  width: 80px;
+  background-image:  url('/assets/animal_img/slime_sprite_80.png') ;
+  background-size: cover;
+  z-index: 50;
+  animation-name: slimeEnclos;
+  animation-duration: 2s;
+  animation-timing-function: steps(8);
+  animation-iteration-count: infinite;
+  
+}
+.citMenu{
+  height:120px ;
+  width: 120px;
+  background-image:  url('/assets/animal_img/cit_sprites_120.png') ;
+  background-size: cover;
+  z-index: 50;
+  animation-name: cit1;
+  animation-duration: 2s;
+  animation-timing-function: steps(8);
+  animation-iteration-count: infinite;
+  
 }
 
+.detailEnclos{
+  position: absolute;
+  height: 800px;
+  top: 20%;
+  left: 40%;
+  width: 35%;
+  z-index: 99;
+  background-image: url('/assets/ui/big_menu.png');
+  background-size: cover;
+  background-position: center;
+  
+}
+  @keyframes sprite {
+    
+    0% { background-position: 0 0;  }
+  100% { background-position: -288px 0;
+               
+}
+
+  }
+  @keyframes cit {
+    
+    0% { background-position: 0 0;  }
+  100% { background-position: -640px 0;
+               
+}
+
+  }
+  @keyframes toad {
+    
+    0% { background-position: 0 0;  }
+  100% { background-position: -384px 0;
+               
+}
+
+  }
+  @keyframes bat {
+    
+    0% { background-position: 0 0;  }
+  100% { background-position: -200px 0;
+               
+}
+
+  }
+  @keyframes slime {
+    
+    0% { background-position: 0 0;  }
+  100% { background-position: -800px 0;
+               
+}
+
+  }
+  @keyframes soleil{
+    0% {  }
+    100% {
+                 
+  }
+  }
+
+  @keyframes toad1{
+    0% { background-position: 0 0;  }
+    100% { background-position: -1920px 0;
+                 
+  }
+  }
+  @keyframes bat1{
+    0% { background-position: 0 0;  }
+    100% { background-position: -480px 0;
+                 
+  }
+  }
+  @keyframes cit1{
+    0% { background-position: 0 0;  }
+    100% { background-position: -960px 0;
+                 
+  }
+  }
+  @keyframes slime1{
+    0% { background-position: 0 0;  }
+    100% { background-position: -960px 0;
+                 
+  }
+  }
+  @keyframes toadEnclos {
+    
+    0% { background-position: 0 0;  }
+  100% { background-position: -1280px 0;
+               
+}
+
+  }
+  @keyframes slimeEnclos {
+    
+    0% { background-position: 0 0;  }
+  100% { background-position: -1280px 0;
+               
+}
+
+  }
+  @keyframes citrouilleEnclos {
+    
+    0% { background-position: 0 0;  }
+  100% { background-position: -1280px 0;
+               
+}
+
+  }
+  @keyframes batEnclos {
+    
+    0% { background-position: 0 0;  }
+  100% { background-position: -320px 0;
+               
+}
+
+  }
