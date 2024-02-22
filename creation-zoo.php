@@ -41,7 +41,7 @@ if (!empty($_GET["id"])) {
                     <div class="d-flex flex-row">
                         <?php
                         foreach ($zoos as $zoo) { ?>
-                            <a href="./zoo.php?id=<?= $_GET["id"] ?>&zoo=<?=$zoo["name"]?>" >
+                            <a href="./zoo.php?id=<?= $_GET["id"] ?>&zoo=<?=$zoo["name"]?>&idzoo=<?=$zoo["id"] ?>" >
                                 <div class="card btn">
                                     <div>Zoo <?= $zoo["name"] ?></div>
                                 </div>

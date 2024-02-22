@@ -13,10 +13,12 @@ class ZooManager
         $this->db = $db;
     }
 
-    public function test($data){
-        $preparedrequest = $this->db->prepare('INSERT INTO employe (name) VALUES (?) ');
+    public function addWorker(Worker $worker){
+        $preparedrequest = $this->db->prepare('INSERT INTO employe (name, id_zoo, img) VALUES (?,?,?) ');
         $preparedrequest->execute([
-            $data
+            $worker->getName(),
+            $worker->getId(),
+            $worker->getImg()
         ]);
     }
 
